@@ -1,0 +1,275 @@
+.epcGraph {
+    background: #fff;
+    border: 4px solid #fff;
+    margin-bottom: 16px;
+    font-family: sans-serif;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    max-width: 450px;
+}
+
+.epcGraph * {
+    box-sizing: border-box; 
+    white-space: nowrap;
+}
+
+.epcGraph h5 {
+    margin-top: 0;
+}
+
+.epcGraph.epc:before,
+.epcGraph.eir:before {
+    position: absolute;
+    color: #fff;
+    background: #0f739a;
+    top: 0;
+    left: 6px;
+    padding: 4px 8px;
+    width: 60%;
+    z-index: 1;
+}
+
+.epcGraph.epc:before {
+    content: "Energy Performance Certificate";
+}
+
+.epcGraph.eir:before {
+    content: "Environmental Impact Report";
+}
+
+@media only screen and (max-width: 500px) {
+    .epcGraph.epc:before {
+        content: "EPC";
+    }
+
+    .epcGraph.eir:before {
+        content: "EIR";
+    }
+}
+
+.epcBar {
+    background: #000;
+    color: #fff;
+    /*margin-bottom: 4px;*/
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    height: 29px;
+}
+
+.epcBar:before {
+    font-size: 12px;  
+}
+
+.epcBar:after {
+    font-size: 18px;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.epcBar.epcA {
+    background: #198B59;
+    width: 40%;
+}
+
+.epcBar.epcB {
+    background: #2EA949;
+    width: 50%;
+}
+
+.epcBar.epcC {
+    background: #95CA53;
+    width: 60%;
+}
+
+.epcBar.epcD {
+    background: #F0EB36;
+    width: 70%;
+}
+
+.epcBar.epcE {
+    background: #F6AE35;
+    width: 80%;
+}
+
+.epcBar.epcF {
+    background: #F0702F;
+    width: 90%;
+}
+
+.epcBar.epcG {
+    background: #E8262F;
+    width: 100%;
+}
+
+.epcGraph.eir .epcBar.epcA {
+    background: #099ADA;
+}
+
+.epcGraph.eir .epcBar.epcB {
+    background: #23B7F6;
+}
+
+.epcGraph.eir .epcBar.epcC {
+    background: #0999DE;
+}
+
+.epcGraph.eir .epcBar.epcD {
+    background: #0677C4;
+}
+
+.epcGraph.eir .epcBar.epcE {
+    background: #BFBFBF;
+}
+
+.epcGraph.eir .epcBar.epcF {
+    background: #A1A1A1;
+}
+
+.epcGraph.eir .epcBar.epcG {
+    background: #808080;
+}
+
+.epcBar.epcA:before {
+    content: "(92 plus)";
+}
+
+.epcBar.epcA:after {
+    content: "A";
+}
+
+.epcBar.epcB:before {
+    content: "(81 - 91)";
+}
+
+.epcBar.epcB:after {
+    content: "B";
+}
+
+.epcBar.epcC:before {
+    content: "(69 - 80)";
+}
+
+.epcBar.epcC:after {
+    content: "C";
+}
+
+.epcBar.epcD:before {
+    content: "(55 - 68)";
+}
+
+.epcBar.epcD:after {
+    content: "D";
+}
+
+.epcBar.epcE:before {
+    content: "(39 - 54)";
+}
+
+.epcBar.epcE:after {
+    content: "E";
+}
+
+.epcBar.epcF:before {
+    content: "(21 - 38)";
+}
+
+.epcBar.epcF:after {
+    content: "F";
+}
+
+.epcBar.epcG:before {
+    content: "(1 - 20)";
+}
+
+.epcBar.epcG:after {
+    content: "G";
+}
+
+.epcGraph .overall {
+    margin-right: 4px;
+    width: 220px;
+}
+
+.epcGraph .overall span {
+    font-size: 10px;
+    font-weight: bold;
+    display: block;
+}
+
+.epcGraph .overall span:first-child {
+    margin-bottom: 4px;
+}
+
+.epcGraph .overall span:last-child {
+    margin-top: 4px;
+}
+
+.epcGraph .current,
+.epcGraph .potential {
+    border: 4px solid #0F739A;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+}
+
+.epcGraph .current .header,
+.epcGraph .potential .header {
+    border-bottom: 2px solid #0F739A;
+    padding: 4px;
+    text-align: center;
+}
+
+.epcGraph .current {
+    border-width: 0 1px 2px 2px;
+}
+
+.epcGraph .potential {
+    border-width: 0 2px 2px 1px;
+}
+
+.epcGraph .chart {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: flex-end;
+}
+
+.epcGraph .chart .chartPointer {
+    position: relative;
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    width: 95%;
+    height: 35px;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.epcGraph .potential .chart .chartPointer {
+    z-index: 5;
+}
+
+.epcGraph .chart .chartPointer:before {
+    content: "";
+    background: inherit;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    transform: rotate(45deg);
+    z-index: -1;
+    left: -12px;
+    top: 5px;
+    box-shadow: -2px 2px 0px #fff;
+}
